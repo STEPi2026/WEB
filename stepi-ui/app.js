@@ -11,7 +11,7 @@ const menus = [
   ["master", "⚙", "기준 데이터 관리"],
   ["gamification", "♧", "게이미피케이션"],
 ];
-let page = "dashboard",
+let page = "login",
   tab = 0,
   selected = 0,
   query = "";
@@ -144,7 +144,7 @@ $("#student-form").onsubmit = async (e) => {
   toast("학생이 추가되었습니다.");
 };
 function route() {
-  const next = location.hash.slice(1) || "dashboard";
+  const next = location.hash.slice(1) || "login";
   page = [
     ...menus.map((x) => x[0]),
     "login",
@@ -155,7 +155,7 @@ function route() {
     "tutor-detail",
   ].includes(next)
     ? next
-    : "dashboard";
+    : "login";
   tab = 0;
   render();
   window.scrollTo(0, 0);

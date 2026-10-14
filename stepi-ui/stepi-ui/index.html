@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>STEPi · 학습 관리 플랫폼</title>
+    <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="toast" role="status"></div>
+    <dialog id="modal">
+      <form id="student-form">
+        <h2>새 학생 추가</h2>
+        <label
+          >학생 이름<input
+            name="name"
+            required
+            maxlength="20"
+            placeholder="이름을 입력하세요" /></label
+        ><label
+          >학년<select name="grade">
+            <option>중2-1</option>
+            <option>중2-2</option>
+            <option>중2-3</option>
+          </select></label
+        >
+        <div class="actions">
+          <button type="button" id="cancel">취소</button
+          ><button class="primary">학생 추가</button>
+        </div>
+      </form>
+    </dialog>
+    <script src="api.js" defer></script>
+    <script src="components.js" defer></script>
+    <script src="pages.js" defer></script>
+    <script src="auth.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>

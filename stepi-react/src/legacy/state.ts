@@ -1,5 +1,5 @@
 export const menus: [string,string,string][] = [
- ["dashboard","▦","대시보드"],["students","♙","학생 관리"],["learning","▤","학습 현황"],["concepts","◇","개념/Skill 분석"],["errors","⌕","오류·오개념 분석"],["tutor","✧","AI Tutor 개입 내역"],["reports","▧","학습 리포트"],["problems","▣","문제 데이터 관리"],["master","⚙","기준 데이터 관리"],["gamification","♧","게이미피케이션"]];
+ ["dashboard","▦","대시보드"],["students","♙","학생 관리"],["learning","▤","학습 현황"],["concepts","◇","개념/Skill 분석"],["errors","⌕","오류·오개념 분석"],["tutor","✧","AI Tutor 개입 내역"],["reports","▧","학습 리포트"],["problems","▣","문제 데이터 관리"],["master","⚙","기준 데이터 관리"],["gamification","♧","게이미피케이션"],["guardians","♙","보호자 연결"],["classes","▤","학급 관리"]];
 export let page='login',tab=0,selected=0,query='';
 export type StudentRow = [string,string,boolean,string,number];
 export let students: StudentRow[]=[];

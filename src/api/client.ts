@@ -1,5 +1,5 @@
 import axios from 'axios';
-export const MOCK = import.meta.env.VITE_USE_MOCK !== 'false';
+export const MOCK = import.meta.env.VITE_USE_MOCK === 'true';
 export const client = axios.create({baseURL:import.meta.env.VITE_API_BASE_URL || '/api/v1',timeout:15000});
 client.interceptors.request.use(config=>{config.headers.set('ngrok-skip-browser-warning','true');const token=sessionStorage.getItem('stepi_access_token');if(token)config.headers.Authorization=`Bearer ${token}`;return config;});
 // Only refresh an expired access token. Concurrent 401s share one refresh request.

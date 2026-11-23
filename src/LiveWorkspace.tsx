@@ -20,6 +20,28 @@ const views:Record<string,{title:string;endpoint?:string;student?:boolean;descri
  analysis:{title:'AI 분석 이력',student:true,endpoint:'/students/{id}/ai-analyses',description:'학생 AI 분석'},
  standing:{title:'상대적 학습 현황',student:true,endpoint:'/students/{id}/relative-standing',description:'학생 상대적 학습 현황'},
 };
+// Presentation-only descriptions for each existing route. No API or navigation changes.
+const screenGuide:Record<string,{eyebrow:string;headline:string;summary:string;steps:[string,string,string]}>= {
+ student:{eyebrow:'STUDENT PROFILE',headline:'학생별 학습 프로필',summary:'백엔드에 저장된 학생의 기본 정보와 학습 상태를 확인합니다.',steps:['학생 선택','기본 정보 조회','학습 상태 확인']},
+ concepts:{eyebrow:'KNOWLEDGE MAP',headline:'개념과 Skill을 한눈에',summary:'학생에게 연결된 지식 요소와 개념별 상태를 살펴봅니다.',steps:['학생 선택','지식맵 조회','개념·Skill 확인']},
+ errors:{eyebrow:'LEARNING INSIGHTS',headline:'학생의 취약 영역 살펴보기',summary:'서버가 제공하는 취약 Skill과 오류 관련 분석을 확인합니다.',steps:['학생 선택','취약 영역 조회','보완 학습 참고']},
+ tutor:{eyebrow:'AI TUTOR HISTORY',headline:'학습 도움의 과정을 기록합니다',summary:'실제 서버에 저장된 AI Tutor의 개입 및 힌트 이력을 조회합니다.',steps:['학생 선택','개입 이력 조회','힌트 단계 확인']},
+ reports:{eyebrow:'LEARNING REPORTS',headline:'학습 성장을 리포트로 확인하세요',summary:'학생별 주간 리포트 목록과 저장된 상세 기록을 조회합니다.',steps:['학생 선택','리포트 목록','상세 내역 확인']},
+ problems:{eyebrow:'PROBLEM LIBRARY',headline:'수학 문제를 체계적으로 관리하세요',summary:'서버의 문제 목록을 검색하고 관리자 권한으로 등록·수정합니다.',steps:['문제 검색','문제 목록 조회','관리자 등록·수정']},
+ master:{eyebrow:'CONTENT MANAGEMENT',headline:'학습 기준 데이터를 관리하세요',summary:'문제와 연결되는 개념 및 Skill 기준 정보를 조회·관리합니다.',steps:['분류 선택','기준 데이터 조회','관리자 등록·수정']},
+ gamification:{eyebrow:'LEARNING REWARDS',headline:'학습의 성취를 한눈에',summary:'레벨, 경험치, 연속 학습일과 배지 등 서버의 보상 데이터를 조회합니다.',steps:['학생 선택','성장 수치 조회','획득 보상 확인']},
+ roadmap:{eyebrow:'LEARNING ROADMAP',headline:'학생별 학습 경로를 확인하세요',summary:'서버에 생성된 개인별 학습 로드맵과 추천 정보를 살펴봅니다.',steps:['학생 선택','로드맵 조회','다음 학습 확인']},
+ analysis:{eyebrow:'AI ANALYSIS HISTORY',headline:'AI 풀이 분석 결과를 한눈에',summary:'분석 완료·판정 보류·인식 실패 등 실제 분석 기록을 구분해 표시합니다.',steps:['학생 선택','분석 기록 조회','판정 상태 확인']},
+ standing:{eyebrow:'RELATIVE LEARNING',headline:'같은 학년 내 학습 위치 확인',summary:'비교 데이터가 충분한 경우 서버가 제공한 학년별 학습 지표를 보여줍니다.',steps:['학생 선택','비교 통계 조회','제공 가능 여부 확인']},
+};
+function ScreenGuide({view,studentName}:{view:string;studentName?:string}){
+ const guide=screenGuide[view];if(!guide)return null;
+ return <section className="stepi-showcase stepi-route-showcase" aria-label={guide.headline}>
+  <div className="stepi-showcase-intro"><div><span className="stepi-showcase-kicker">{guide.eyebrow}</span><h2>{guide.headline}</h2><p>{guide.summary}</p></div>
+  <span className="stepi-showcase-pill">{studentName?`조회 학생 · ${studentName}`:'백엔드 데이터 조회 화면'}</span></div>
+  <div className="stepi-route-steps">{guide.steps.map((step,index)=><div key={step}><span>{String(index+1).padStart(2,'0')}</span><strong>{step}</strong><small>{index===0?'대상 및 범위 선택':index===1?'저장된 서버 정보 사용':'조회 결과를 화면에 표시'}</small></div>)}</div>
+ </section>;
+}
 type EditorKind='concepts'|'skills'|'problems';
 const editorFields:Record<EditorKind,{key:string;label:string;required?:boolean;type?:string;hint?:string}[]>={
  concepts:[{key:'code',label:'개념 코드',required:true},{key:'name',label:'개념명',required:true},{key:'subject',label:'과목',required:true},{key:'grade_level',label:'학년',required:true},{key:'description',label:'설명'},{key:'parent_concept_code',label:'상위 개념 코드'}],
@@ -245,6 +267,7 @@ export default function LiveWorkspace(){
  const logout=()=>{authApi.logout();location.hash='login';location.reload()};
  const allMenus=[...menus.filter(m=>m[0]!=='guardians'&&m[0]!=='classes'),...additional];
  return <div className="shell"><aside className="sidebar stepi-live-sidebar"><div className="logo"><img src="/assets/stepi-logo-official.png" alt="STEPi" style={{maxWidth:140}}/></div><p className="nav-label">LIVE BACKEND</p><nav className="nav stepi-live-nav" aria-label="주 메뉴">{allMenus.map(([id,icon,name])=><button key={id} className={route===id?'active':''} onClick={()=>location.hash=id}><span className="icon">{icon}</span><span className="nav-text">{name}</span></button>)}</nav><div className="profile"><div>{account.role} · 실서버 연동<small>{account.name||'실시간 학습 데이터'}</small></div><button onClick={logout}>로그아웃</button></div></aside><main className="main"><header className="topbar"><input placeholder="학생 이름 검색" value={search} onChange={e=>setSearch(e.target.value)}/><span>{account.role} · 학습 관리 시스템</span></header><div className="content"><div className="heading"><div><span className="eyebrow">STEPi LEARNING ANALYTICS</span><h1>{config?.title??route}</h1><p>{config?.description??'실제 API 데이터'}</p></div></div>
+ {config&&route!=='dashboard'&&route!=='students'&&route!=='learning'&&<ScreenGuide view={route} studentName={config.student?students.find(s=>s.id===studentId)?.name:undefined}/>}
  {config?.student&&<section className="card" style={{marginBottom:16}}><label>조회 학생　<select value={studentId} onChange={e=>setStudentId(e.target.value)}>{!students.length&&<option value="">연결된 학생 없음</option>}{filteredStudents.map(s=><option key={s.id} value={s.id}>{s.name} ({s.id})</option>)}</select></label></section>}
  {route==='learning'&&<section className="stepi-showcase stepi-learning-showcase" aria-label="학습 기록 요약">
   <div className="stepi-showcase-intro"><div><span className="stepi-showcase-kicker">LEARNING HISTORY</span><h2>학생의 학습 과정을 확인하세요</h2><p>선택한 학생의 실제 학습 기록을 백엔드에서 조회합니다.</p></div><span className="stepi-showcase-pill">실서버 학습 이력</span></div>

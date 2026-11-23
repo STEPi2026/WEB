@@ -1223,3 +1223,36 @@ button:disabled {
 .stepi-overview-tile-button:focus-visible{outline:3px solid #795dd0;outline-offset:3px}
 .stepi-overview-tile-action{font-size:11px;color:#7358c6;font-weight:700;margin-top:2px}
 @media(prefers-reduced-motion:reduce){.stepi-overview-tile-button{transition:none}.stepi-overview-tile-button:hover{transform:none}}
+
+/* 2026-11-23 All sidebar views: presentation-only design system. */
+.stepi-route-showcase{position:relative;overflow:hidden;background:linear-gradient(112deg,#4f3cad 0%,#7857d0 59%,#956fe1 100%);box-shadow:0 16px 36px rgba(75,53,146,.13)}
+.stepi-route-showcase:before{content:"";position:absolute;right:-75px;top:-130px;width:330px;height:330px;border:1px solid rgba(255,255,255,.12);border-radius:50%;pointer-events:none}
+.stepi-route-showcase:after{content:"";position:absolute;right:14%;bottom:-155px;width:260px;height:260px;border:1px solid rgba(255,255,255,.09);border-radius:50%;pointer-events:none}
+.stepi-route-showcase>.stepi-showcase-intro,.stepi-route-steps{position:relative;z-index:1}
+.stepi-route-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:23px}
+.stepi-route-steps>div{padding:16px 19px;border-radius:14px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.12);display:flex;flex-direction:column;gap:6px;min-width:0}
+.stepi-route-steps span{font-size:11px;font-weight:800;color:#e2d7ff;letter-spacing:.07em}
+.stepi-route-steps strong{font-size:15px;color:white}
+.stepi-route-steps small{font-size:11px;color:#eee6ff;line-height:1.5}
+.stepi-live-sidebar~.main .content>.card,.stepi-live-sidebar~.main .content>.stepi-subsection,.stepi-live-sidebar~.main .content>.stepi-problem-catalog{border:1px solid #e7e3f3;box-shadow:0 7px 26px rgba(49,31,91,.035);border-radius:18px}
+.stepi-live-sidebar~.main .content>.card h2{font-size:19px;color:#31274f;letter-spacing:-.025em;margin-bottom:12px}
+.stepi-live-sidebar~.main .stepi-stat{background:linear-gradient(145deg,#faf8ff 0%,#f5f3ff 100%);border-color:#e8e1f8;transition:transform .18s ease,box-shadow .18s ease}
+.stepi-live-sidebar~.main .stepi-stat:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(91,67,172,.09)}
+.stepi-live-sidebar~.main .stepi-stat span{color:#8066af}
+.stepi-live-sidebar~.main .stepi-stat strong{color:#2e2548}
+.stepi-live-sidebar~.main .stepi-detail{background:linear-gradient(155deg,#fff 0%,#faf9ff 100%);border-color:#e8e3f5;box-shadow:0 3px 13px rgba(60,38,104,.025)}
+.stepi-live-sidebar~.main .stepi-detail>span{color:#79679d}
+.stepi-live-sidebar~.main .stepi-node{border-color:#e6e0f3;background:#fbfaff}
+.stepi-live-sidebar~.main .stepi-node-type{color:#7052c8}
+.stepi-live-sidebar~.main .stepi-data-table th{background:#f5f1fc;color:#62547e}
+.stepi-live-sidebar~.main .stepi-data-table tbody tr:hover{background:#faf7ff}
+.stepi-live-sidebar~.main .stepi-table-scroll{border-color:#e9e4f3}
+.stepi-live-sidebar~.main .stepi-empty{background:#faf8ff;border-color:#dcd1f5;padding:44px 20px}
+.stepi-live-sidebar~.main .stepi-empty strong{color:#453268}
+.stepi-live-sidebar~.main .stepi-editor-grid input,.stepi-live-sidebar~.main .stepi-editor-grid textarea{border:1px solid #ded7ee;border-radius:10px;padding:11px 12px;background:#fff}
+.stepi-live-sidebar~.main .content input:focus-visible,.stepi-live-sidebar~.main .content select:focus-visible,.stepi-live-sidebar~.main .content textarea:focus-visible{outline:2px solid #9b7ce8;outline-offset:2px}
+.stepi-live-sidebar~.main .stepi-subsection{padding:14px 0}
+.stepi-live-sidebar~.main .stepi-subsection h3{color:#3d305f;font-size:16px}
+.stepi-live-sidebar~.main .stepi-details{background:#faf9ff;border-color:#e5dff5}
+.stepi-live-sidebar~.main .stepi-problem-catalog .stepi-problem-tools{align-items:center}
+@media(max-width:780px){.stepi-route-steps{grid-template-columns:1fr}.stepi-route-showcase{padding:22px}.stepi-route-showcase .stepi-showcase-pill{white-space:normal}}

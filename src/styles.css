@@ -1149,3 +1149,77 @@ button:disabled {
   white-space: pre-wrap;
   line-height: 1.5;
 }
+
+/* Live Backend dashboard — API values only, no demo figures */
+.stepi-overview{display:grid;gap:20px;color:#272442}
+.stepi-overview-hero{background:linear-gradient(115deg,#6050c9 0%,#7962d9 58%,#9b80ed 100%);color:white;border-radius:22px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:28px;box-shadow:0 12px 26px rgba(99,76,189,.12)}
+.stepi-overview-kicker,.stepi-overview-section-kicker{font-size:11px;letter-spacing:.14em;font-weight:800}
+.stepi-overview-kicker{color:#e4dcff}
+.stepi-overview-hero h2{font-size:28px;font-weight:800;line-height:1.2;margin:9px 0 10px;color:white}
+.stepi-overview-hero p{margin:0;color:#f4efff;font-size:14px}
+.stepi-overview-period{background:rgba(255,255,255,.14);padding:16px 20px;border:1px solid rgba(255,255,255,.25);border-radius:16px;min-width:206px;display:grid;gap:6px}
+.stepi-overview-period span{font-size:12px;color:#f1eaff}.stepi-overview-period strong{font-size:17px;white-space:nowrap}.stepi-overview-period small{font-size:11px;color:#eee5ff}
+.stepi-overview-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.stepi-overview-tile{min-width:0;background:#fff;border:1px solid #e9e5f5;border-radius:18px;padding:21px 22px;box-shadow:0 6px 24px rgba(42,35,94,.035);display:flex;flex-direction:column;gap:8px}
+.stepi-overview-tile.is-accent{background:#f7f3ff;border-color:#e5dafd}
+.stepi-overview-tile-top{display:flex;justify-content:space-between;align-items:center;color:#645b7f;font-size:13px;font-weight:700;gap:4px}
+.stepi-overview-tile-icon{width:36px;height:36px;display:grid;place-items:center;background:#f0ecff;border-radius:10px;color:#765bd4;font-size:19px}
+.stepi-overview-tile strong{font-size:28px;letter-spacing:-.045em;line-height:1.2;overflow-wrap:anywhere}.stepi-overview-tile small{font-size:11px;color:#948ba9;line-height:1.4}
+.stepi-overview-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(250px,1fr);gap:18px}
+.stepi-overview-panel{background:#fff;border:1px solid #eae7f2;border-radius:19px;padding:23px;min-width:0;box-shadow:0 6px 20px rgba(42,35,94,.025)}
+.stepi-overview-panel-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+.stepi-overview-section-kicker{color:#8c75d6}.stepi-overview-panel h3{font-size:17px;margin:5px 0 0;color:#302849;font-weight:800}
+.stepi-overview-legend{font-size:12px;color:#827895;display:flex;align-items:center;gap:6px}.stepi-overview-legend i{width:9px;height:9px;background:#8367dd;border-radius:50%}
+.stepi-overview-no-activity{min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:#fbfaff;border:1px dashed #dfd5f4;border-radius:15px;padding:20px}
+.stepi-overview-empty-icon{width:48px;height:48px;border-radius:14px;background:#efeafd;color:#886adb;font-size:24px;display:grid;place-items:center;margin-bottom:12px}
+.stepi-overview-no-activity strong{color:#42355e;font-size:15px}.stepi-overview-no-activity p{color:#7b7290;font-size:12px;max-width:360px;margin:9px 0}.stepi-overview-no-activity>span{font-size:11px;color:#a198af}
+.stepi-overview-bars{display:grid;gap:18px;padding:14px 0}.stepi-overview-bar-line{display:grid;grid-template-columns:100px minmax(0,1fr) 32px;align-items:center;gap:14px;font-size:13px}.stepi-overview-bar-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}.stepi-overview-bar-track{height:12px;background:#f0ecfa;border-radius:50px;overflow:hidden}.stepi-overview-bar-track>div{height:100%;border-radius:50px;background:linear-gradient(90deg,#6653d2,#ad92f5)}.stepi-overview-bar-line strong{text-align:right}
+.stepi-overview-status-row{display:flex;gap:13px;background:#f8f6fe;border-radius:14px;padding:17px}.stepi-overview-status-dot{width:11px;height:11px;flex:none;border-radius:50%;background:#af96ee;margin-top:4px;box-shadow:0 0 0 5px #e9e1fc}.stepi-overview-status-row strong{font-size:14px;color:#45365e}.stepi-overview-status-row p{color:#80748f;font-size:12px;line-height:1.6;margin:7px 0 0}
+.stepi-overview-small-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}.stepi-overview-small-stats>div{padding:14px;border:1px solid #efebf7;border-radius:13px;display:grid;gap:6px}.stepi-overview-small-stats span{font-size:11px;color:#827895}.stepi-overview-small-stats strong{font-size:19px}.stepi-overview-explanation{font-size:12px;line-height:1.7;color:#91899e}.stepi-overview-link{border:0;background:transparent;color:#7055cf;padding:6px 0;font-weight:700;cursor:pointer;font-size:13px;text-align:left}
+.stepi-overview-chip{border-radius:999px;background:#f0ebfc;color:#795fc5;padding:7px 11px;font-size:11px;font-weight:700}.stepi-overview-roster .stepi-overview-panel-heading{margin-bottom:16px}.stepi-overview-table{min-width:740px}.stepi-overview-table td:first-child{display:flex;align-items:center;gap:10px}.stepi-overview-avatar{height:34px;width:34px;border-radius:10px;background:#ece5fa;color:#7153ca;display:grid;place-items:center;font-weight:800;flex:none}.stepi-overview-student{display:grid;gap:2px}.stepi-overview-student strong{font-size:13px}.stepi-overview-student small{font-size:11px;color:#8f859e}.stepi-overview-no-rows{text-align:center;padding:25px;color:#817591}.stepi-dashboard-empty{padding:42px;text-align:center;border:1px dashed #ddd5ee;border-radius:18px;background:#fff;display:grid;gap:8px}.stepi-dashboard-empty span{color:#887d98;font-size:13px}
+@media(max-width:1100px){.stepi-overview-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.stepi-overview-layout{grid-template-columns:1fr}}
+@media(max-width:650px){.stepi-overview-hero{padding:22px;flex-direction:column;align-items:stretch}.stepi-overview-hero h2{font-size:23px}.stepi-overview-period{min-width:0}.stepi-overview-tile{padding:16px}.stepi-overview-tile strong{font-size:23px}.stepi-overview-panel{padding:16px}}
+
+/* Presentation-ready LIVE WEB student management and learning history.
+   Strictly presentation-only: no API request, auth, data mapping or mutation changes. */
+.stepi-showcase{border-radius:20px;background:linear-gradient(125deg,#5946b9 0%,#7958d2 58%,#9873e4 100%);color:#fff;padding:27px 30px;margin-bottom:18px;box-shadow:0 12px 30px rgba(85,66,175,.12)}
+.stepi-showcase-intro{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.stepi-showcase-kicker{display:block;letter-spacing:.13em;font-size:11px;font-weight:800;color:#8b72d4;margin-bottom:8px}
+.stepi-showcase .stepi-showcase-kicker{color:#e9deff}
+.stepi-showcase h2{font-size:24px;line-height:1.35;font-weight:800;color:#fff;margin:0 0 8px}
+.stepi-showcase-intro p{font-size:13px;color:#f0e9ff;margin:0;line-height:1.6}
+.stepi-showcase-pill{padding:9px 14px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.27);border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap}
+.stepi-showcase-kpis{margin-top:25px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.stepi-showcase-kpis>div{padding:16px 20px;border-radius:14px;background:rgba(255,255,255,.96);color:#312a50;min-width:0}
+.stepi-showcase-kpis span{display:block;color:#746887;font-size:12px;font-weight:700}
+.stepi-showcase-kpis strong{display:block;font-size:30px;margin-top:9px;letter-spacing:-.03em;line-height:1.15}
+.stepi-showcase-kpis strong small{font-size:15px;margin-left:4px}
+.stepi-showcase-kpis p{font-size:11px;color:#8b819b;margin:8px 0 0}
+.stepi-showcase-card{border:1px solid #e8e4f3;box-shadow:0 6px 24px rgba(45,35,100,.035)}
+.stepi-showcase-card-header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.stepi-showcase-card-header h3{margin:0 0 7px;font-size:19px;color:#30294b}
+.stepi-showcase-card-header p{font-size:12px;color:#837890;margin:0}
+.stepi-showcase-count{border:1px solid #dfd5f5;background:#f8f4ff;color:#7656be;padding:8px 13px;border-radius:50px;font-size:12px;font-weight:750}
+.stepi-showcase-table th{background:#f6f3fd;color:#6f6487}
+.stepi-showcase-table td{vertical-align:middle}
+.stepi-showcase-name{color:#6750c4!important;font-size:14px;font-weight:750!important;border:none!important;background:transparent!important;padding:2px!important}
+.stepi-showcase-access{display:inline-flex;background:#f1edff;color:#6a56b9;padding:7px 12px;border-radius:40px;font-weight:700;font-size:12px}
+.stepi-showcase-detail{border:1px solid #ded4f4!important;background:#fff!important;color:#6750bf!important;padding:8px 13px!important;border-radius:9px!important;font-weight:700}
+.stepi-showcase-blank{border:1px dashed #ddd5ec;background:#faf8ff;padding:35px;text-align:center;border-radius:15px;color:#6e6382}.stepi-showcase-blank p{font-size:12px;margin:7px 0 0}
+.stepi-class-management>.stepi-class-panel{background:#fcfbff;border-color:#e6dff4!important}
+.stepi-learning-showcase{padding-bottom:26px}
+.stepi-learning-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:24px}
+.stepi-learning-steps>div{padding:17px;min-width:0;border-radius:14px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);display:grid;gap:5px}
+.stepi-learning-steps span{font-size:12px;color:#ebdfff;font-weight:800}.stepi-learning-steps strong{font-size:14px}.stepi-learning-steps small{font-size:12px;color:#ece3fc}
+.stepi-learning-records{border:1px solid #ebe6f6;box-shadow:0 8px 26px rgba(42,35,94,.025)}
+.stepi-learning-records h2{font-size:19px!important;color:#30294b}
+.stepi-learning-hint{font-size:13px;color:#82758f;margin:0 0 18px}
+.stepi-learning-records .stepi-empty{padding:48px 20px;background:#faf8ff;border-color:#e0d6ef;min-height:155px;display:flex;justify-content:center;align-items:center;flex-direction:column}
+@media(max-width:720px){.stepi-showcase{padding:21px}.stepi-showcase-kpis{grid-template-columns:1fr}.stepi-learning-steps{grid-template-columns:1fr}.stepi-showcase h2{font-size:21px}}
+
+/* Dashboard metric card navigation: presentation usability only, no API changes */
+.stepi-overview-tile-button{width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer;appearance:none;-webkit-appearance:none;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
+.stepi-overview-tile-button:hover{transform:translateY(-2px);border-color:#b9a7ed;box-shadow:0 10px 28px rgba(89,63,156,.12)}
+.stepi-overview-tile-button:focus-visible{outline:3px solid #795dd0;outline-offset:3px}
+.stepi-overview-tile-action{font-size:11px;color:#7358c6;font-weight:700;margin-top:2px}
+@media(prefers-reduced-motion:reduce){.stepi-overview-tile-button{transition:none}.stepi-overview-tile-button:hover{transform:none}}
